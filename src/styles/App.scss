@@ -1,37 +1,78 @@
 /* Base Application Styles */
-html,body {
-  width:100%;
+html, body {
+  width: 100%;
   height: 100%;
-  background: #333;
+  background: #fff;
 }
 
-.content{
-  width:100%;
+
+.content {
+  width: 100%;
   height: 100%;
 }
 
 /*  stage -- start */
-.stage{
-  position:relative;
+.stage {
+  position: relative;
   width: 100%;
-  height: 680px;
+  height: 100%;
   background-color: #ddd;
 }
 
-.img-sec{
+.img-sec {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  perspective: 1800px;
+  @at-root {
+    .img-figure {
+      position: absolute;
+      width: 320px;
+      height: 360px;
+      margin: 0;
+      padding: 40px;
+      box-sizing: border-box;
+      background-color: #fff;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform .6s ease-in-out, left .6s ease-in-out, top .6s ease-in-out;
+      &.is-inverse {
+        transform:rotateY(180deg);
+      }
+    }
 
+    .img-back {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      padding: 30px;
+      box-sizing: border-box;
+      text-align: center;
+      color: #666;
+      transform: rotateY(180deg);
+      background: #fff;
+    }
+
+    figcaption {
+      text-align: center;
+
+      .img-title {
+        margin: 20px 0 0 0;
+        color: #a7a0a2;
+        font-size: 16px;
+      }
+    }
+  }
 }
 
-
-.controller-nav{
+.controller-nav {
   position: absolute;
   left: 0;
   bottom: 30px;
   z-index: 101;
-  width:100%;
+  width: 100%;
   text-align: center;
 }
